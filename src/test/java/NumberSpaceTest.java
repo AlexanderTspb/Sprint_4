@@ -3,7 +3,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import static org.junit.Assert.assertEquals;
-
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 @RunWith(Parameterized.class)
 public class NumberSpaceTest {
 
@@ -27,9 +28,11 @@ public class NumberSpaceTest {
     }
 
     @Test
-    public void correctNameTest()  {
+    @DisplayName("NumberSpacesTest")
+    @Description("Тесто на проверку количества пробелов в имени")
+    public void checkNumberSpacesTest()  {
 
-        Account account = new Account(checkingValue);
+        account = new Account(checkingValue);
         boolean actual = account.checkNameToEmboss();
         assertEquals(expectedValue,actual);
 

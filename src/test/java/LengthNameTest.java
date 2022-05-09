@@ -3,7 +3,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import static org.junit.Assert.assertEquals;
-
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 @RunWith(Parameterized.class)
 public class LengthNameTest {
 
@@ -30,9 +31,11 @@ public class LengthNameTest {
     }
 
     @Test
-    public void correctNameTest()  {
+    @DisplayName("LengthNameTest")
+    @Description("Тест на проверку количества символов имени")
+    public void checkLengthNameTest()  {
 
-        Account account = new Account(checkingValue);
+        account = new Account(checkingValue);
         boolean actual = account.checkNameToEmboss();
         assertEquals(expectedValue,actual);
 

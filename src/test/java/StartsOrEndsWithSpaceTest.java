@@ -3,7 +3,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import static org.junit.Assert.assertEquals;
-
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 @RunWith(Parameterized.class)
 public class StartsOrEndsWithSpaceTest {
 
@@ -28,9 +29,11 @@ public class StartsOrEndsWithSpaceTest {
     }
 
     @Test
-    public void correctNameTest()  {
+    @DisplayName("StartsOrEndsWithSpaceTest")
+    @Description("Тест на проверку является ли начальным или последним символом пробел")
+    public void checkStartsOrEndsWithSpaceTest()  {
 
-        Account account = new Account(checkingValue);
+        account = new Account(checkingValue);
         boolean actual = account.checkNameToEmboss();
         assertEquals(expectedValue,actual);
 
